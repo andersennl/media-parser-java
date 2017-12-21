@@ -9,7 +9,6 @@ import java.util.Date;
 
 public class HtmlGenerator {
     private Library library;
-    private final String path = "/Users/andersennl/Desktop/media.html";
     private final String mediaServerUrl = "http://mediaserver.local:32400/web/index.html";
 
     HtmlGenerator(Library library) {
@@ -69,7 +68,8 @@ public class HtmlGenerator {
         String html = builder.toString();
 
         try {
-            Files.write(Paths.get(path), html.getBytes());
+            String dir = System.getProperty("user.dir").concat("/media.html");
+            Files.write(Paths.get(dir), html.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
         }
