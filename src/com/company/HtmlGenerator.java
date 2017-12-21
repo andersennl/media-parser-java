@@ -68,7 +68,7 @@ public class HtmlGenerator {
         String html = builder.toString();
 
         try {
-            String dir = System.getProperty("user.dir").concat("/media.html");
+            String dir = System.getProperty("user.dir").concat("/results.html");
             Files.write(Paths.get(dir), html.getBytes());
         } catch (IOException e) {
             e.printStackTrace();
