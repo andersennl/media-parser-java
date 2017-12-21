@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class Series {
     private File seriesFolder;
@@ -22,6 +23,7 @@ public class Series {
     }
 
     public ArrayList<Season> getSeasons() {
+        seasons.sort(Comparator.comparing(Season::toString));
         return seasons;
     }
 

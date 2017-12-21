@@ -2,6 +2,10 @@ package com.company;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+
+import static java.util.Comparator.comparing;
 
 public class Library {
     private ArrayList<Movie> movies;
@@ -37,10 +41,12 @@ public class Library {
     }
 
     public ArrayList<Series> getSeries() {
+        series.sort(Comparator.comparing(Series::toString));
         return series;
     }
 
     public ArrayList<Movie> getMovies() {
+        movies.sort(Comparator.comparing(Movie::toString));
         return movies;
     }
 }
